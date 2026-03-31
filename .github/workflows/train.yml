@@ -2,7 +2,7 @@ name: Train model
 
 on:
   pull_request:
-    branches: [production]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
         --stream
   experiment:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: production
     needs: experiment
     steps:
     - name: Check out repo
