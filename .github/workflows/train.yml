@@ -25,7 +25,7 @@ jobs:
         --resource-group ML-Azure-Dev-ops-training
         --workspace-name ML-Azure-Dev-ops-training
         --stream
-  experiment:
+  production:
     runs-on: ubuntu-latest
     environment: production
     needs: experiment
