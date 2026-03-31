@@ -10,8 +10,8 @@ import mlflow
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import train_test_split
 
-FEATURES = ['Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure', 
-            'TricepsThickness', 'SerumInsulin', 'BMI', 'DiabetesPedigree', 
+FEATURES = ['Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure',
+            'TricepsThickness', 'SerumInsulin', 'BMI', 'DiabetesPedigree',
             'Age']
 TARGET = 'Diabetic'
 
