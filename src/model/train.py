@@ -10,8 +10,11 @@ import mlflow
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import train_test_split
 
-FEATURES = ['Pregnancies','PlasmaGlucose','DiastolicBloodPressure','TricepsThickness','SerumInsulin','BMI','DiabetesPedigree','Age']
+FEATURES = ['Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure', 
+            'TricepsThickness', 'SerumInsulin', 'BMI', 'DiabetesPedigree', 
+            'Age']
 TARGET = 'Diabetic'
+
 
 # define functions
 def main(args):
@@ -27,11 +30,12 @@ def main(args):
     # train model
     train_model(args.reg_rate, X_train, X_test, y_train, y_test)
 
+
 # TO DO: add function to split data
 def split_data(df):
     X, y = df[FEATURES].values, df[TARGET].values
-    X_train, X_test, y_train, y_test = train_test_split(X, y, 
-                                                        test_size=0.30, 
+    X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                        test_size=0.30,
                                                         random_state=0)
     return X_train, X_test, y_train, y_test
 
@@ -43,8 +47,6 @@ def get_csvs_df(path):
     if not csv_files:
         raise RuntimeError(f"No CSV files found in provided data path: {path}")
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
-
-
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
@@ -67,6 +69,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
