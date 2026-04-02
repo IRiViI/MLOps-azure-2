@@ -23,6 +23,9 @@ def main(args):
     # evaluate model
     eval_model(model, X_test, y_test)
 
+    # save model
+    save_model(model)
+
 def get_data(path):
     # function that reads the data from a file or a folder of CSV files
     print("Reading data...")
@@ -36,6 +39,10 @@ def get_data(path):
         df = pd.read_csv(path)
 
     return df
+
+def save_model(model):
+
+    mlflow.models.set_model(model)
 
 # function that splits the data
 def split_data(df):
