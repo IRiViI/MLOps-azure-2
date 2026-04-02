@@ -41,8 +41,7 @@ def get_data(path):
     return df
 
 def save_model(model):
-
-    mlflow.models.set_model(model)
+    mlflow.sklearn.log_model(model, artifact_path="model")
 
 # function that splits the data
 def split_data(df):
